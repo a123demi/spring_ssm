@@ -1,0 +1,2 @@
+Description	Resource	Path	Location	Type
+The superclass "javax.servlet.http.HttpServlet" was not found on the Java Build Path	index.jsp	/ssm-manager-controller/target/ssm-manager-controller/jsp	line 1	JSP Problem

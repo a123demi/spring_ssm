@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.ssm.manager.mapper.UserMapper">  
+    <resultMap id="UserMapper" type="com.ssm.manager.pojo.User">  
+        <id property="id" column="id" />  
+        <result property="userName" column="userName" />  
+        <result property="password" column="password" />  
+    </resultMap>  
+      
+    <select id="getUsers" resultMap="UserMapper">  
+        select id,userName,password from t_user      
+    </select>  
+    
+    <select id="getUserById" resultType="com.ssm.manager.pojo.User" parameterType="java.lang.String">  
+        select id,userName,password from t_user  where id = #{param1}    
+    </select>  
+    
+    <insert id="insertUser" parameterType="com.ssm.manager.pojo.User" useGeneratedKeys="true" keyProperty="id">
+    	insert into t_user(username,password) values(#{userName},#{password})
+    </insert>
+      
+</mapper>  
